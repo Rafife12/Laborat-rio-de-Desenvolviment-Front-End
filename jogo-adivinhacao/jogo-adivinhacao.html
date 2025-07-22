@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head><title>Jogo Adivinhação</title></head>
+<body>
+<script>
+let numeroCorreto = Math.floor(Math.random() * 10) + 1;
+let tentativas = 0;
+let palpite;
+
+while (palpite != numeroCorreto) {
+  palpite = parseInt(prompt("Adivinhe o número entre 1 e 10:"));
+  tentativas++;
+
+  if (palpite < numeroCorreto) {
+    alert("Muito baixo!");
+  } else if (palpite > numeroCorreto) {
+    alert("Muito alto!");
+  } else {
+    alert(`Acertou! O número era ${numeroCorreto}. Tentativas: ${tentativas}`);
+  }
+}
+</script>
+</body>
+</html>

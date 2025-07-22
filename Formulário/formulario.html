@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head><title>Formulário</title></head>
+<body>
+<form id="formulario" onsubmit="return validarFormulario()">
+  <label>Nome:</label>
+  <input type="text" name="nome" required><br><br>
+
+  <label>Data de Nascimento:</label>
+  <input type="date" name="nascimento" required><br><br>
+
+  <label>RG (somente números):</label>
+  <input type="text" name="rg" pattern="[0-9]+" required><br><br>
+
+  <label>Etnia:</label>
+  <select name="etnia" required>
+    <option value="">Selecione</option>
+    <option value="branca">Branca</option>
+    <option value="preta">Preta</option>
+    <option value="parda">Parda</option>
+    <option value="indigena">Indígena</option>
+    <option value="amarela">Amarela</option>
+  </select><br><br>
+
+  <label>Senha:</label>
+  <input type="password" id="senha" required><br><br>
+
+  <label>Confirmar Senha:</label>
+  <input type="password" id="confirmarSenha" required><br><br>
+
+  <button type="submit">Enviar</button>
+</form>
+
+<script>
+function validarFormulario() {
+  const senha = document.getElementById("senha").value;
+  const confirmar = document.getElementById("confirmarSenha").value;
+  if (senha !== confirmar) {
+    alert("As senhas não coincidem!");
+    return false;
+  }
+  return true;
+}
+</script>
+</body>
+</html>
