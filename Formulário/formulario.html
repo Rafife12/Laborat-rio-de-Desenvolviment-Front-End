@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulário</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        #formulario {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        
+        input:focus, select:focus {
+            border-color: #4CAF50;
+            outline: none;
+            box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+        }
+        
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        .error {
+            color: #f44336;
+            margin-top: -12px;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+<form id="formulario" onsubmit="return validarFormulario()">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome" required>
+    <div class="error" id="nome-error"></div>
+
+    <label for="nascimento">Data de Nascimento:</label>
+    <input type="date" id="nascimento" name="nascimento" required min="1900-01-01"><br><br>
+
+    <label for="rg">RG (somente números):</label>
+    <input type="text" id="rg" name="rg" pattern="[0-9]+" maxlength="12" required><br><br>
+
+    <label for="etnia">Etnia:</label>
+    <select id="etnia" name="etnia" required>
+        <option value="">Selecione</option>
+        <option value="branca">Branca</option>
+        <option value="preta">Preta</option>
+        <option value="parda">Parda</option>
+        <option value="indigena">Indígena</option>
+        <option value="amarela">Amarela</option>
+    </select><br><br>
+
+    <label for="senha">Senha:</label>
+    <input type="password" id="senha" placeholder="Digite sua senha" required><br><br>
+
+    <label for="confirmarSenha">Confirmar Senha:</label>
+    <input type="password" id="confirmarSenha" placeholder="Confirme sua senha" required><br><br>
+
+    <button type="submit" id="submit-btn">
+        <span id="submit-text">Enviar</span>
+        <span id="loading" style="display:none;">Processando...</span>
+    </button>
+</form>
+
+<script>
+function validarFormulario() {
+    const submitBtn = document.getElementById('submit-btn');
+    const submitText = document.getElementById('submit-text');
+    const loading = document.getElementById('loading');
+
+    // Show loading state
+    submitText.style.display = 'none';
+    loading.style.display = 'inline';
+    submitBtn.disabled = true;
+
+    const senha = document.getElementById("senha").value;
+    const confirmar = document.getElementById("confirmarSenha").value;
+    
+    if (senha !== confirmar) {
+        document.getElementById('confirmarSenha').focus();
+        document.getElementById('confirmarSenha-error').textContent = "As senhas não coincidem!";
+        
+        // Reset button state
+        submitText.style.display = 'inline';
+        loading.style.display = 'none';
+        submitBtn.disabled = false;
+        
+        return false;
+    }
+    
+    // Simulate form processing
+    setTimeout(() => {
+        alert("Formulário enviado com sucesso!");
+        
+        // Reset button state
+        submitText.style.display = 'inline';
+        loading.style.display = 'none';
+        submitBtn.disabled = false;
+        
+        document.getElementById('formulario').reset();
+    }, 1500);
+    
+    return true;
+}
+</script>
+</body>
+</html>

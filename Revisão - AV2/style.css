@@ -1,0 +1,43 @@
+/* Questão 6: Diferença entre classes e IDs */
+.elemento {
+  color: blue;
+}
+
+#elementoUnico {
+  font-weight: bold;
+}
+
+/* Questão 7: Correção do CSS */
+#titulo {
+  color: red;
+  font-size: 20px;
+  text-align: center;
+}
+
+/* Questão 8: Modelo de caixa (Box Model) */
+div {
+  width: 200px;       /* conteúdo */
+  padding: 10px;      /* espaço interno */
+  border: 2px solid;  /* borda */
+  margin: 15px;       /* margem */
+}
+
+/* Questão 9: Estilo para parágrafos */
+p {
+  font-style: italic;
+  color: blue;
+  margin-top: 20px;
+}
+
+/* Questão 10: Seletores CSS */
+p {
+  color: green;
+}
+
+.minha-classe {
+  font-weight: bold;
+}
+
+#meu-id {
+  font-size: 18px;
+}

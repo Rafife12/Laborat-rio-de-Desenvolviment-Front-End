@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<title>Respostas Teóricas - Frontend</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    max-width: 900px;
+  }
+  h2 {
+    color: #2c3e50;
+    border-bottom: 2px solid #4CAF50;
+    padding-bottom: 5px;
+  }
+  pre {
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    padding: 10px;
+    overflow-x: auto;
+  }
+  code {
+    font-family: Consolas, monospace;
+  }
+</style>
+</head>
+<body>
+
+<h1>Respostas Teóricas Frontend - Questões 1 a 18</h1>
+
+<section>
+  <h2>1. Elementos Semânticos vs Não Semânticos</h2>
+  <p><strong>Semânticos:</strong> possuem significado claro sobre o conteúdo, facilitam SEO e acessibilidade.</p>
+  <pre><code>&lt;article&gt;, &lt;header&gt;, &lt;footer&gt;, &lt;nav&gt;, &lt;section&gt;</code></pre>
+  <p><strong>Não semânticos:</strong> são elementos genéricos usados para estrutura, sem significado.</p>
+  <pre><code>&lt;div&gt;, &lt;span&gt;</code></pre>
+</section>
+
+<section>
+  <h2>2. Correção do Código HTML</h2>
+  <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Página&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Bem-vindo&lt;/h1&gt;
+  &lt;p&gt;Conteúdo da página&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+  <p><em>Justificativa:</em> Fechamento correto das tags, fechamento do &lt;head&gt; e uso correto das tags de título e parágrafo.</p>
+</section>
+
+<section>
+  <h2>3. Uso do atributo alt na tag &lt;img&gt;</h2>
+  <p>O atributo <code>alt</code> fornece descrição alternativa para a imagem, essencial para acessibilidade e SEO.</p>
+  <pre><code>&lt;img src="foto.jpg" alt="Descrição da imagem" /&gt;</code></pre>
+</section>
+
+<section>
+  <h2>4. Formulário com método POST</h2>
+  <pre><code>&lt;form method="POST" action="/enviar"&gt;
+  &lt;label&gt;Nome:&lt;/label&gt;
+  &lt;input type="text" name="nome" required /&gt;
+  &lt;label&gt;Email:&lt;/label&gt;
+  &lt;input type="email" name="email" required /&gt;
+  &lt;button type="submit"&gt;Enviar&lt;/button&gt;
+&lt;/form&gt;
+</code></pre>
+</section>
+
+<section>
+  <h2>5. DOCTYPE em HTML5</h2>
+  <p>A declaração <code>&lt;!DOCTYPE html&gt;</code> indica ao navegador que o documento é HTML5, ativando o modo padrão.</p>
+</section>
+
+<section>
+  <h2>6. Diferença entre classes e IDs no CSS</h2>
+  <pre><code>/* Classe - pode ser usada em vários elementos */
+.elemento {
+  color: blue;
+}
+
+/* ID - único na página */
+#elementoUnico {
+  font-weight: bold;
+}
+</code></pre>
+</section>
+
+<section>
+  <h2>7. Correção do CSS</h2>
+  <pre><code>#titulo {
+  color: red;
+  font-size: 20px;
+  text-align: center;
+}
+</code></pre>
+</section>
+
+<section>
+  <h2>8. Modelo de Caixa (Box Model)</h2>
+  <p>Composto por: conteúdo, padding (preenchimento interno), border (borda) e margin (margem externa).</p>
+  <pre><code>/* Exemplo box model */
+div {
+  width: 200px;       /* conteúdo */
+  padding: 10px;      /* espaço interno */
+  border: 2px solid;  /* borda */
+  margin: 15px;       /* margem */
+}
+</code></pre>
+</section>
+
+<section>
+  <h2>9. Estilo CSS para parágrafos</h2>
+  <pre><code>p {
+  font-style: italic;
+  color: blue;
+  margin-top: 20px;
+}
+</code></pre>
+</section>
+
+<section>
+  <h2>10. Seletores CSS</h2>
+  <pre><code>/* Seletor por tag */
+p {
+  color: green;
+}
+
+/* Seletor por classe */
+.minha-classe {
+  font-weight: bold;
+}
+
+/* Seletor por ID */
+#meu-id {
+  font-size: 18px;
+}
+</code></pre>
+</section>
+
+<section>
+  <h2>11. Variáveis em JavaScript: var, let e const</h2>
+  <pre><code>// var - escopo global ou de função, redeclarável
+var x = 10;
+
+// let - escopo de bloco, não redeclarável no mesmo bloco
+let y = 20;
+
+// const - constante, não pode ser reatribuída
+const z = 30;
+</code></pre>
+</section>
+
+<section>
+  <h2>12. Correção da função JavaScript</h2>
+  <pre><code>function exibirMensagem() {
+  let nome = prompt("Digite seu nome");
+  alert("Olá " + nome);
+}
+</code></pre>
+</section>
+
+<section>
+  <h2>13. Funções anônimas e Arrow Functions</h2>
+  <pre><code>// Função anônima
+const anonima = function() {
+  console.log("Função anônima");
+};
+
+// Arrow function
+const seta = () => {
+  console.log("Arrow function");
+};
+</code></pre>
+</section>
+
+<section>
+  <h2>14. Evento click em botão</h2>
+  <pre><code>&lt;button id="btn"&gt;Clique aqui&lt;/button&gt;
+
+document.getElementById('btn').addEventListener('click', () => {
+  console.log("Botão clicado!");
+});
+</code></pre>
+</section>
+
+<section>
+  <h2>15. Uso do querySelector()</h2>
+  <pre><code>document.querySelector("#titulo").textContent = "Novo conteúdo";
+</code></pre>
+</section>
+
+<section>
+  <h2>16. Estruturas de controle if, else if e switch</h2>
+  <pre><code>let x = 2;
+
+if (x === 1) {
+  console.log("Um");
+} else if (x === 2) {
+  console.log("Dois");
+} else {
+  console.log("Outro");
+}
+
+switch(x) {
+  case 1:
+    console.log("Um");
+    break;
+  case 2:
+    console.log("Dois");
+    break;
+  default:
+    console.log("Outro");
+}
+</code></pre>
+</section>
+
+<section>
+  <h2>17. API REST e métodos HTTP</h2>
+  <p>API REST usa HTTP para comunicação. Métodos principais:</p>
+  <ul>
+    <li><strong>GET:</strong> Recuperar dados</li>
+    <li><strong>POST:</strong> Criar dados</li>
+    <li><strong>PUT:</strong> Atualizar dados</li>
+    <li><strong>DELETE:</strong> Apagar dados</li>
+  </ul>
+</section>
+
+<section>
+  <h2>18. Diferença entre GET e POST</h2>
+  <p><strong>GET:</strong> Envia parâmetros na URL, usado para buscar dados, seguro e idempotente.</p>
+  <p><strong>POST:</strong> Envia dados no corpo da requisição, usado para criar/alterar dados, não idempotente.</p>
+  <pre><code>// Exemplo GET
+GET /usuarios?id=123
+
+// Exemplo POST
+POST /usuarios
+Content-Type: application/json
+
+{
+  "nome": "João"
+}
+</code></pre>
+</section>
+
+</body>
+</html>
